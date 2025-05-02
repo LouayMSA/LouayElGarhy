@@ -48,7 +48,7 @@ $(document).ready(function(){
 		  scrollTop: $(hash).offset().top
 		}, 700, function() {
 		  // Optionally update the URL (this part can be skipped to prevent the #)
-		  window.location.hash = hash;
+		//   window.location.hash = hash;
 		});
 	  } 
 	});
