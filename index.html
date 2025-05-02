@@ -277,8 +277,10 @@
                         <div class="overlay">
                             <div class="overlay-infos">
                                 <h5>Heaven Valley</h5>
-                                <a href="https://apps.apple.com/kw/app/heaven-vally/id6741517681" target="_blank"><i class="ti-apple"></i></a>
-                                <a href="https://play.google.com/store/apps/details?id=com.app.heaven_vally" target="_blank"><i class="ti-android"></i></a>
+                                <a href="https://apps.apple.com/kw/app/heaven-vally/id6741517681" target="_blank"><i
+                                        class="ti-apple"></i></a>
+                                <a href="https://play.google.com/store/apps/details?id=com.app.heaven_vally"
+                                    target="_blank"><i class="ti-android"></i></a>
                             </div>
                         </div>
                     </div>
@@ -289,8 +291,10 @@
                         <div class="overlay">
                             <div class="overlay-infos">
                                 <h5>Sarfha - صرّفها</h5>
-                                <a href="https://apps.apple.com/kw/app/id6544787418" target="_blank"><i class="ti-apple"></i></a>
-                                <a href="https://play.google.com/store/apps/details?id=com.app.sarfha" target="_blank"><i class="ti-android"></i></a>
+                                <a href="https://apps.apple.com/kw/app/id6544787418" target="_blank"><i
+                                        class="ti-apple"></i></a>
+                                <a href="https://play.google.com/store/apps/details?id=com.app.sarfha"
+                                    target="_blank"><i class="ti-android"></i></a>
                             </div>
                         </div>
                     </div>
@@ -299,8 +303,10 @@
                         <div class="overlay">
                             <div class="overlay-infos">
                                 <h5>Your Travel Guide - دليل وجهتك</h5>
-                                <a href="https://apps.apple.com/id/app/id6738397663" target="_blank"><i class="ti-apple"></i></a>
-                                <a href="https://play.google.com/store/apps/details?id=com.app.dalilwejhtak" target="_blank"><i class="ti-android"></i></a>
+                                <a href="https://apps.apple.com/id/app/id6738397663" target="_blank"><i
+                                        class="ti-apple"></i></a>
+                                <a href="https://play.google.com/store/apps/details?id=com.app.dalilwejhtak"
+                                    target="_blank"><i class="ti-android"></i></a>
                             </div>
                         </div>
                     </div>
@@ -457,10 +463,10 @@
                 I’m just a message away—no pressure, no jargon, just real talk and real solutions.</p>
 
             <div class="contact text-left">
-                <!-- <div class="form">
+                <div class="form">
                     <h6 class="subtitle">Available 24/7</h6>
                     <h6 class="section-title mb-4">Get In Touch</h6>
-                    <form>
+                    <form id="contactForm">
                         <div class="form-group">
                             <input type="email" class="form-control" id="exampleInputEmail1"
                                 aria-describedby="emailHelp" placeholder="Enter email" required>
@@ -475,7 +481,7 @@
                         </div>
                         <button type="submit" class="btn btn-primary btn-block rounded w-lg">Send Message</button>
                     </form>
-                </div> -->
+                </div>
                 <div class="pt-4 pb-4 contact-infos">
                     <div class="item">
                         <i class="ti-location-pin"></i>
@@ -507,6 +513,8 @@
     </section>
     <!-- End of Contact Section -->
 
+
+
     <!-- Page Footer -->
     <footer class="page-footer">
         <div class="container">
@@ -529,7 +537,28 @@
         </div>
     </footer>
     <!-- End of page footer -->
-
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            var formData = new FormData(this);
+            
+            fetch('YOUR_GOOGLE_APPS_SCRIPT_URL', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert("Message Sent!");
+                // Optionally reset the form
+                document.getElementById('contactForm').reset();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert("Error sending message.");
+            });
+        });
+        </script>
     <!-- core  -->
     <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
     <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
