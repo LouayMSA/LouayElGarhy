@@ -14,8 +14,7 @@
 	}
 
 	.overlay {
-		background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba($white, 0.7)); // Black gradient with primary color
-
+		background: linear-gradient(to bottom, rgba(255, 122, 87, 0.8) 0%, rgba(255, 122, 87, 0.5) 100%);
 		position: absolute;
 		left: 0;
 		bottom: 100%;
@@ -30,7 +29,6 @@
 			position: absolute;
 			top: 0%;
 			left: 50%;
-			width: 75%;
 			transform: translate(-50%, -50%);
 			@include custom-transition(all, .3);
 			transition-delay: .2s;

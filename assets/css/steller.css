@@ -11077,7 +11077,8 @@ pre {
 }
 
 .img-wrapper .overlay {
-  background: rgba(255, 122, 87, 0.7);
+  background: linear-gradient(to bottom, rgba(255, 122, 87, 0.8) 0%, rgba(255, 122, 87, 0.8) 100%);
+
   position: absolute;
   left: 0;
   bottom: 100%;

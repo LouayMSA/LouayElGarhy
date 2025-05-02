@@ -21,11 +21,15 @@ $(document).ready(function(){
 			event.preventDefault();
 
 			var hash = this.hash;
+			$(".nav-link").removeClass("active");
+
+			// Add active class to the clicked link
+			$(this).addClass("active");
 
 			$('html, body').animate({
-				scrollTop: $(hash).offset().top
+				scrollTop: $(hash).offset().top - 48
 			}, 700, function(){
-				window.location.hash = hash;
+				// window.location.hash = hash;
 			});
       	} 
     });
