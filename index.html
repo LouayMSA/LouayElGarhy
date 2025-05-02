@@ -554,6 +554,9 @@
                 .then(data => {
                     document.getElementById('formMessage').style.display = 'block';
                     document.getElementById('contactForm').reset();
+                    setTimeout(() => {
+                        document.getElementById('formMessage').style.display = 'none';
+                    }, 5000);
                 })
                 .catch(error => {
                     console.error('Error:', error);
