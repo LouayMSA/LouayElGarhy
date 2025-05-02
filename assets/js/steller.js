@@ -30,3 +30,27 @@ $(document).ready(function(){
       	} 
     });
 });
+
+$(document).ready(function(){
+	// When clicking on the Hire Me button (or any anchor link with .nav-link)
+	$("#hireMeBtn").on('click', function(event) {
+  
+	  // Check if the hash exists (i.e., if the target section is specified)
+	  if (this.hash !== "") {
+		
+		// Prevent the default anchor behavior
+		event.preventDefault();
+  
+		var hash = this.hash;
+  
+		// Animate smooth scroll to the target section
+		$('html, body').animate({
+		  scrollTop: $(hash).offset().top
+		}, 700, function() {
+		  // Optionally update the URL (this part can be skipped to prevent the #)
+		  window.location.hash = hash;
+		});
+	  } 
+	});
+  });
+  
